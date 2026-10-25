@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Robyson Residency — Menu digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-:root{--or:#E4572E;--or-clair:#F3E5AB;--fond:#0E0E0C;--papier:#16150F;--ivoire:#EDE6D6;--sourd:#8B8064}
-html,body{height:100%;overflow:hidden;background:var(--fond);color:var(--ivoire);font-family:'Space Mono',monospace}
+:root{--or:#E4572E;--or-clair:#F5B7B1;--fond:#F7F5F0;--papier:#FFFFFF;--ivoire:#1A1A1A;--sourd:#6B6B6B;--ft:'Montserrat';--fs:'Montserrat';--fc:'Inter'}
+html,body{height:100%;overflow:hidden;background:var(--fond);color:var(--ivoire);font-family:var(--fc),monospace}
 body{display:flex;flex-direction:column;align-items:center;justify-content:center}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 1.2s steps(3) infinite}
 @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(-2%,1%)}66%{transform:translate(1%,-2%)}100%{transform:translate(0,0)}}
 .entete{position:fixed;top:0;left:0;width:100%;padding:14px 20px;z-index:100;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
-.entete .marque{font-family:'Cinzel',serif;font-weight:900;font-size:17px;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
-.entete .marque small{display:block;font-family:'Space Mono',monospace;font-weight:400;font-size:8px;color:var(--sourd);letter-spacing:3px;margin-top:2px}
+.entete .marque{font-family:var(--ft),serif;font-weight:900;font-size:17px;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
+.entete .marque small{display:block;font-family:var(--fc),monospace;font-weight:400;font-size:8px;color:var(--sourd);letter-spacing:3px;margin-top:2px}
 .points{display:flex;gap:6px}
 .points i{width:7px;height:7px;border-radius:50%;border:1px solid var(--or);opacity:.45}
 .points i.on{background:var(--or);opacity:1}
@@ -28,9 +28,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opa
 .filigrane{position:absolute;inset:0;pointer-events:none;opacity:.05;
   background:radial-gradient(circle at 50% 45%, var(--or) 0%, transparent 62%)}
 .couverture{align-items:center;justify-content:center;text-align:center;border:2px double var(--or)}
-.mono{font-family:'Cinzel',serif;font-weight:900;font-size:60px;color:var(--or);line-height:1;
+.mono{font-family:var(--ft),serif;font-weight:900;font-size:60px;color:var(--or);line-height:1;
   text-shadow:0 0 30px rgba(212,175,55,.35)}
-h1.glitch{font-family:'Cinzel',serif;font-size:21px;font-weight:900;letter-spacing:2px;text-transform:uppercase;
+h1.glitch{font-family:var(--ft),serif;font-size:21px;font-weight:900;letter-spacing:2px;text-transform:uppercase;
   color:var(--or-clair);margin-top:14px;position:relative;animation:glitch 4.5s infinite}
 h1.glitch::before,h1.glitch::after{content:attr(data-texte);position:absolute;inset:0;opacity:0}
 h1.glitch::before{color:#00e5ff;animation:g1 4.5s infinite}
@@ -42,13 +42,13 @@ h1.glitch::after{color:#ff2d78;animation:g2 4.5s infinite}
 .trait{width:56px;height:1px;background:var(--or);margin:22px 0;opacity:.7}
 .infos{font-size:10.5px;line-height:2;color:var(--sourd)}
 .infos b{color:var(--ivoire);font-weight:400}
-h2{font-family:'Cinzel',serif;font-size:16px;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
+h2{font-family:var(--ft),serif;font-size:16px;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
 .ligne-cat{width:42px;height:2px;background:var(--or);margin:8px 0 18px}
 .plats{flex:1;overflow-y:auto;padding-right:4px}
 .plat{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dotted rgba(212,175,55,.28)}
-.plat .n{font-family:'Playfair Display',serif;font-size:13px;color:var(--ivoire)}
+.plat .n{font-family:var(--fs),serif;font-size:13px;color:var(--ivoire)}
 .plat .d{font-size:9.5px;color:var(--sourd);line-height:1.5;margin-top:3px}
-.plat .p{font-family:'Cinzel',serif;font-size:14px;color:var(--or);white-space:nowrap}
+.plat .p{font-family:var(--ft),serif;font-size:14px;color:var(--or);white-space:nowrap}
 .pied{margin-top:auto;padding-top:10px;border-top:1px solid rgba(212,175,55,.18);font-size:8.5px;color:var(--sourd);display:flex;justify-content:space-between}
 .pied a{color:var(--or);text-decoration:none}
 .ctrl{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;z-index:100}
@@ -56,20 +56,20 @@ h2{font-family:'Cinzel',serif;font-size:16px;color:var(--or);letter-spacing:1.5p
 .ctrl button:hover{background:var(--or);color:#111}
 #compteur{font-size:10px;color:var(--sourd);letter-spacing:2px;min-width:56px;text-align:center}
 .cmd{position:fixed;bottom:26px;right:20px;z-index:100;background:var(--or);color:#141208;border:none;
-  padding:13px 20px;border-radius:30px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;
+  padding:13px 20px;border-radius:30px;font-family:var(--fc),monospace;font-weight:700;font-size:11px;
   letter-spacing:1px;cursor:pointer;box-shadow:0 8px 24px rgba(212,175,55,.3);text-decoration:none;display:inline-block}
 .cmd:active{transform:scale(.96)}
 .panneau{position:fixed;inset:0;background:rgba(6,6,5,.86);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .panneau.ouvert{display:flex}
 .boite{background:var(--papier);border:1px solid var(--or);border-radius:8px;padding:24px;width:min(420px,92vw);max-height:84vh;overflow-y:auto}
-.boite h3{font-family:'Cinzel',serif;color:var(--or);font-size:15px;letter-spacing:1px;margin-bottom:16px}
+.boite h3{font-family:var(--ft),serif;color:var(--or);font-size:15px;letter-spacing:1px;margin-bottom:16px}
 .choix{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dotted rgba(212,175,55,.25);font-size:12px}
 .choix button{background:none;border:1px solid var(--or);color:var(--or);width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:14px;line-height:1}
 .boite input{width:100%;background:transparent;border:1px solid rgba(212,175,55,.4);color:var(--ivoire);
-  padding:11px;border-radius:4px;font-family:'Space Mono',monospace;font-size:12px;margin:8px 0}
+  padding:11px;border-radius:4px;font-family:var(--fc),monospace;font-size:12px;margin:8px 0}
 .boite .valider{width:100%;background:var(--or);color:#141208;border:none;padding:13px;border-radius:4px;
-  font-family:'Space Mono',monospace;font-weight:700;font-size:12px;cursor:pointer;margin-top:10px;letter-spacing:1px}
-.boite .fermer{background:none;border:none;color:var(--sourd);font-size:11px;cursor:pointer;margin-top:12px;font-family:'Space Mono',monospace}
+  font-family:var(--fc),monospace;font-weight:700;font-size:12px;cursor:pointer;margin-top:10px;letter-spacing:1px}
+.boite .fermer{background:none;border:none;color:var(--sourd);font-size:11px;cursor:pointer;margin-top:12px;font-family:var(--fc),monospace}
 .scene{position:fixed;z-index:1;opacity:.14;pointer-events:none}
 .scene svg{width:100%;height:auto;stroke:var(--or);fill:none;stroke-width:1.4}
 #scene-plat{bottom:9%;left:4%;width:150px}

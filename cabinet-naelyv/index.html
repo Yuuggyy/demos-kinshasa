@@ -2,20 +2,20 @@
 <html lang="fr"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cabinet Dentaire Naely'v — CABINET DENTAIRE & ORTHODONTIE</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--accent:#5FA8D3;--accent-l:#E8D9A0;--bg:#0E0F12;--card:#171A20;--txt:#EDE9DF;--mut:#8B8778;--bord:rgba(255,255,255,.09)}
-body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;overflow-x:hidden}
+:root{--accent:#5FA8D3;--accent-l:#E8D9A0;--bg:#F5FAFD;--card:#FFFFFF;--txt:#16232B;--mut:#63757F;--bord:rgba(255,255,255,.09);--ft:'Montserrat';--fc:'Inter';--fs:'Montserrat'}
+body{background:var(--bg);color:var(--txt);font-family:var(--fc),sans-serif;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opacity:.055;
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
  animation:grain .5s steps(1) infinite}
 @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-2%)}100%{transform:translate(3%,3%)}}
-.mono{font-family:'Space Mono',monospace;letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:var(--mut)}
-h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
+.mono{font-family:var(--fc),monospace;letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:var(--mut)}
+h1,h2,h3{font-family:var(--ft),serif;font-weight:600}
 header{padding:26px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--bord);position:relative;z-index:10}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--accent)}
-.logo small{display:block;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.25em;color:var(--mut);margin-top:3px}
+.logo{font-family:var(--ft),serif;font-size:22px;font-weight:700;color:var(--accent)}
+.logo small{display:block;font-family:var(--fc),monospace;font-size:8px;letter-spacing:.25em;color:var(--mut);margin-top:3px}
 nav a{color:var(--txt);text-decoration:none;margin-left:26px;font-size:13px;opacity:.75}
 nav a:hover{opacity:1;color:var(--accent-l)}
 .hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 24px;position:relative;z-index:10}
@@ -43,7 +43,7 @@ section h2{font-size:clamp(30px,5vw,52px);margin:14px 0 34px}
 .tuile{aspect-ratio:4/3;border-radius:14px;border:1px solid var(--bord);display:flex;align-items:flex-end;padding:16px;
  background:linear-gradient(135deg,#1d222b,#12151a 60%,rgba(0,0,0,.4));position:relative;overflow:hidden}
 .tuile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.06),transparent 60%)}
-.tuile span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-l);z-index:2}
+.tuile span{font-family:var(--fc),monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-l);z-index:2}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;background:var(--card);border:1px solid var(--bord);border-radius:20px;padding:38px}
 .info ul{list-style:none}
 .info li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:13px}
