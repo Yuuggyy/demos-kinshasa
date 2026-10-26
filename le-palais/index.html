@@ -78,11 +78,11 @@ h2{font-family:var(--ft),serif;font-size:16px;color:var(--or);letter-spacing:1.5
 @keyframes bulle{0%{opacity:0;transform:translateY(6px) scale(.7)}15%{opacity:1;transform:translateY(0) scale(1)}70%{opacity:1}100%{opacity:0;transform:translateY(-8px)}}
 .etincelle{animation:bulle 3.6s ease-in-out infinite}
 @media(max-width:600px){.mono{font-size:46px}h1.glitch{font-size:17px}#scene-plat{width:104px;bottom:6%}#scene-verre{width:64px}#livre{height:74vh}.cmd{bottom:16px;right:12px;padding:11px 15px;font-size:10px}.ctrl{bottom:16px}}
-</style>
+.logo-couv{width:108px;height:108px;object-fit:contain;filter:drop-shadow(0 6px 18px rgba(0,0,0,.45))}.logo-mini{width:26px;height:26px;object-fit:contain;margin-right:9px}</style>
 </head>
 <body>
 <div class="entete">
-  <div class="marque">LE PALAIS<small>KINSHASA, NGALIEMA</small></div>
+  <img src="logo.png" alt="" class="logo-mini"><div class="marque">LE PALAIS<small>KINSHASA, NGALIEMA</small></div>
   <div class="points" id="points"></div>
 </div>
 
@@ -96,7 +96,7 @@ h2{font-family:var(--ft),serif;font-size:16px;color:var(--or);letter-spacing:1.5
 <div id="livre">
   <div class="feuille couverture active">
     <div class="filigrane"></div>
-    <div class="mono">L</div>
+    <img src="logo.png" alt="" class="logo-couv">
     <h1 class="glitch" data-texte="LE PALAIS">LE PALAIS</h1>
     <div class="sous">GASTRONOMIE &amp; LOUNGE</div>
     <div class="trait"></div>
