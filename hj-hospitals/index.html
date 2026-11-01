@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HJ Hospitals — Prise de rendez-vous en ligne</title>
+<meta name="description" content="HJ Hospitals, Gombe, Kinshasa. Prenez rendez-vous en ligne avec un médecin en moins d'une minute.">
+<style>
+  :root{
+    --encre:#0f2233; --gris:#5b6b7a; --ligne:#e3e9ee; --fond:#ffffff; --doux:#f5f8fa;
+    --soin:#0e7c86; --soin-clair:#e6f4f5; --or:#c9a227;
+    --r:14px; --ombre:0 10px 30px rgba(15,34,51,.08);
+    font-synthesis:none;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--fond); color:var(--encre);
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Plus Jakarta Sans","Inter",system-ui,sans-serif; line-height:1.2; margin:0}
+  a{color:inherit;text-decoration:none}
+  .contenu{width:min(1120px,92vw);margin:0 auto}
+  .bandeau{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
+  .bandeau .contenu{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
+  .marque{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+  .croix{width:34px;height:34px;border-radius:9px;background:var(--soin);display:grid;place-items:center;color:#fff;font-size:19px;font-weight:800}
+  .marque small{display:block;font-weight:500;font-size:11px;color:var(--gris);letter-spacing:.06em;text-transform:uppercase}
+  nav{display:flex;gap:26px;font-size:14.5px;color:var(--gris)}
+  nav a:hover{color:var(--soin)}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:11px;font-weight:650;font-size:14.5px;border:1px solid transparent;cursor:pointer;transition:.18s}
+  .btn-principal{background:var(--soin);color:#fff;box-shadow:0 8px 20px rgba(14,124,134,.22)}
+  .btn-principal:hover{background:#0b646c}
+  .btn-clair{background:#fff;border-color:var(--ligne);color:var(--encre)}
+  .btn-clair:hover{border-color:var(--soin);color:var(--soin)}
+  .heros{padding:70px 0 56px;background:
+    radial-gradient(900px 320px at 85% -10%, var(--soin-clair), transparent 65%),
+    linear-gradient(180deg,#fff, #fbfdfd)}
+  .heros-grille{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .etiquette{display:inline-flex;align-items:center;gap:8px;background:var(--soin-clair);color:#0b646c;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:7px 13px;border-radius:99px}
+  .heros h1{font-size:clamp(30px,4.2vw,46px);letter-spacing:-.03em;margin:18px 0 14px}
+  .heros p{color:var(--gris);font-size:17px;max-width:47ch;margin:0 0 26px}
+  .heros-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .carte-rdv{background:#fff;border:1px solid var(--ligne);border-radius:18px;box-shadow:var(--ombre);padding:26px}
+  .carte-rdv h2{font-size:19px;margin-bottom:4px}
+  .carte-rdv .sous{color:var(--gris);font-size:13.5px;margin-bottom:18px}
+  .champ{margin-bottom:13px}
+  label{display:block;font-size:12.5px;font-weight:650;color:#33475a;margin-bottom:5px}
+  input,select,textarea{width:100%;padding:11px 13px;border:1px solid #d7e0e6;border-radius:9px;font:inherit;font-size:14.5px;background:#fff;color:var(--encre)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--soin);box-shadow:0 0 0 3px rgba(14,124,134,.13)}
+  .deux{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .note{font-size:12px;color:var(--gris);margin-top:11px;text-align:center}
+  .bande{padding:26px 0;border-block:1px solid var(--ligne);background:#fff}
+  .bande .contenu{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .bande b{display:block;font-size:22px;letter-spacing:-.02em}
+  .bande span{font-size:13px;color:var(--gris)}
+  section{padding:66px 0}
+  .titre-section{text-align:center;max-width:640px;margin:0 auto 40px}
+  .titre-section h2{font-size:clamp(23px,3vw,31px);letter-spacing:-.02em}
+  .titre-section p{color:var(--gris);margin:12px 0 0}
+  .grille-services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .service{border:1px solid var(--ligne);border-radius:var(--r);padding:22px;background:#fff;transition:.18s}
+  .service:hover{border-color:var(--soin);transform:translateY(-2px);box-shadow:var(--ombre)}
+  .ico{width:40px;height:40px;border-radius:10px;background:var(--soin-clair);color:#0b646c;display:grid;place-items:center;font-size:18px;margin-bottom:13px}
+  .service h3{font-size:16px;margin-bottom:6px}
+  .service p{color:var(--gris);font-size:14px;margin:0}
+  .grille-medecins{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .medecin{border:1px solid var(--ligne);border-radius:var(--r);background:#fff;overflow:hidden}
+  .medecin .haut{height:96px;background:linear-gradient(135deg,#0e7c86,#12a3ae);display:grid;place-items:center;color:#fff;font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .medecin .corps{padding:18px}
+  .medecin h3{font-size:16px}
+  .medecin .role{color:var(--soin);font-size:13px;font-weight:650;margin:3px 0 8px}
+  .medecin p{color:var(--gris);font-size:13.5px;margin:0}
+  .creneau{display:inline-block;margin-top:12px;font-size:12.5px;background:var(--doux);border:1px solid var(--ligne);padding:5px 10px;border-radius:99px;color:#33475a}
+  .infos{background:var(--doux)}
+  .infos-grille{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+  .bloc-info{border-left:3px solid var(--soin);padding-left:16px;margin-bottom:20px}
+  .bloc-info h3{font-size:15px;margin-bottom:3px}
+  .bloc-info p{color:var(--gris);font-size:14.5px;margin:0}
+  .horaires{background:#fff;border:1px solid var(--ligne);border-radius:var(--r);padding:22px}
+  .horaires ul{list-style:none;margin:12px 0 0;padding:0}
+  .horaires li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--ligne);font-size:14px}
+  .horaires li:last-child{border-bottom:0}
+  .horaires li span{color:var(--gris)}
+  .urcence{background:var(--encre);color:#fff;border-radius:var(--r);padding:22px;margin-top:16px}
+  .urcence b{display:block;font-size:15px;margin-bottom:4px}
+  .urcence a{color:var(--or);font-weight:700}
+  footer{background:var(--encre);color:#c3d1dc;padding:44px 0 26px;font-size:14px}
+  .pied{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .pied h4{color:#fff;font-size:14px;margin:0 0 10px}
+  .pied p,.pied li{color:#9fb2c1;font-size:13.5px}
+  .pied ul{list-style:none;padding:0;margin:0}
+  .pied li{padding:4px 0}
+  .pied a:hover{color:#fff}
+  .signature{padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8ba3b5}
+  .signature a{color:#fff;font-weight:650}
+  .confirmation{display:none;text-align:center;padding:14px 6px}
+  .confirmation .rond{width:52px;height:52px;border-radius:50%;background:var(--soin-clair);color:var(--soin);display:grid;place-items:center;font-size:26px;margin:0 auto 12px}
+  .confirmation h3{font-size:18px;margin-bottom:6px}
+  .confirmation p{color:var(--gris);font-size:14px;margin:0}
+  .recap{margin-top:14px;background:var(--doux);border:1px solid var(--ligne);border-radius:10px;padding:12px;font-size:13px;text-align:left;color:#33475a}
+  @media(max-width:900px){
+    .heros-grille,.infos-grille{grid-template-columns:1fr;gap:30px}
+    .grille-services{grid-template-columns:1fr 1fr}
+    .grille-medecins{grid-template-columns:1fr}
+    .bande .contenu{grid-template-columns:1fr 1fr;gap:16px}
+    nav{display:none}
+    .pied{grid-template-columns:1fr;gap:22px}
+  }
+  @media(max-width:560px){
+    .deux{grid-template-columns:1fr}
+    .grille-services{grid-template-columns:1fr}
+    .heros{padding:44px 0 36px}
+    section{padding:46px 0}
+  }
+</style>
+</head>
+<body>
+
+<header class="bandeau">
+  <div class="contenu">
+    <a class="marque" href="#">
+      <span class="croix">+</span>
+      <span>HJ Hospitals<small>Gombe · Kinshasa</small></span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#medecins">Médecins</a>
+      <a href="#infos">Horaires</a>
+      <a href="#rdv">Rendez-vous</a>
+    </nav>
+    <a class="btn btn-principal" href="#rdv">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<div class="heros">
+  <div class="contenu heros-grille">
+    <div>
+      <span class="etiquette">● Rendez-vous en ligne</span>
+      <h1>Votre médecin vous attend.<br>Réservez en une minute.</h1>
+      <p>Plus besoin d'appeler ni de patienter au téléphone. Choisissez votre service, votre médecin et votre heure. Vous recevez la confirmation par SMS.</p>
+      <div class="heros-actions">
+        <a class="btn btn-principal" href="#rdv">Choisir un créneau</a>
+        <a class="btn btn-clair" href="tel:+243815586555">Appeler la réception</a>
+      </div>
+    </div>
+
+    <div class="carte-rdv" id="rdv">
+      <div id="formulaire">
+        <h2>Prendre rendez-vous</h2>
+        <p class="sous">Réponse immédiate, confirmation par SMS dans l'heure.</p>
+        <form id="f" novalidate>
+          <div class="champ">
+            <label for="nom">Nom complet *</label>
+            <input id="nom" name="nom" required placeholder="Ex. Kabila Mbuyi">
+          </div>
+          <div class="deux">
+            <div class="champ">
+              <label for="tel">Téléphone *</label>
+              <input id="tel" name="tel" required inputmode="tel" placeholder="+243 …">
+            </div>
+            <div class="champ">
+              <label for="mail">E-mail</label>
+              <input id="mail" name="mail" type="email" placeholder="facultatif">
+            </div>
+          </div>
+          <div class="champ">
+            <label for="service">Service *</label>
+            <select id="service" required>
+              <option value="">Choisir un service</option>
+              <option>Médecine générale</option>
+              <option>Pédiatrie</option>
+              <option>Cardiologie</option>
+              <option>Imagerie &amp; laboratoire</option>
+              <option>Maternité</option>
+              <option>Urgences 24h</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="medecin">Médecin</label>
+            <select id="medecin">
+              <option value="">Peu importe</option>
+              <option>Dr Amina Kisembo</option>
+              <option>Dr Patrick Lofembe</option>
+              <option>Dr Grâce Mutombo</option>
+            </select>
+          </div>
+          <div class="deux">
+            <div class="champ">
+              <label for="date">Date *</label>
+              <input id="date" type="date" required>
+            </div>
+            <div class="champ">
+              <label for="heure">Heure *</label>
+              <select id="heure" required>
+                <option value="">Choisir</option>
+                <option>08:00</option><option>09:00</option><option>10:00</option>
+                <option>11:00</option><option>12:00</option><option>14:00</option>
+                <option>15:00</option><option>16:00</option><option>17:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="champ">
+            <label for="motif">Motif (facultatif)</label>
+            <textarea id="motif" rows="2" placeholder="Fièvre depuis deux jours, contrôle, résultats d'analyses…"></textarea>
+          </div>
+          <button class="btn btn-principal" style="width:100%;justify-content:center" type="submit">Confirmer le rendez-vous</button>
+          <p class="note">Vos données restent confidentielles et ne sont jamais partagées.</p>
+        </form>
+      </div>
+
+      <div class="confirmation" id="ok">
+        <div class="rond">✓</div>
+        <h3>Rendez-vous enregistré</h3>
+        <p>Vous recevrez un SMS de confirmation. Pour déplacer le rendez-vous, appelez la réception.</p>
+        <div class="recap" id="recap"></div>
+        <button class="btn btn-clair" style="margin-top:14px" onclick="recommencer()">Prendre un autre rendez-vous</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bande">
+  <div class="contenu">
+    <div><b>24h/24</b><span>Urgences ouvertes</span></div>
+    <div><b>18</b><span>Médecins spécialistes</span></div>
+    <div><b>&lt; 1 min</b><span>Pour réserver en ligne</span></div>
+    <div><b>Gombe</b><span>Boulevard du 30 Juin</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="contenu">
+    <div class="titre-section">
+      <h2>Nos services</h2>
+      <p>Une prise en charge complète, du premier avis au suivi, avec un dossier patient unique.</p>
+    </div>
+    <div class="grille-services">
+      <div class="service">
+        <div class="ico">⚕</div>
+        <h3>Médecine générale</h3>
+        <p>Consultation, bilan de santé, certificats médicaux et suivi des maladies chroniques.</p>
+      </div>
+      <div class="service">
+        <div class="ico">♟</div>
+        <h3>Pédiatrie</h3>
+        <p>Suivi de croissance, vaccinations et soins de l'enfant de la naissance à 15 ans.</p>
+      </div>
+      <div class="service">
+        <div class="ico">♥</div>
+        <h3>Cardiologie</h3>
+        <p>Électrocardiogramme, échographie cardiaque et suivi de l'hypertension.</p>
+      </div>
+      <div class="service">
+        <div class="ico">🔬</div>
+        <h3>Imagerie &amp; laboratoire</h3>
+        <p>Échographie, radiologie et analyses sanguines avec résultats le jour même.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="medecins" style="background:var(--doux)">
+  <div class="contenu">
+    <div class="titre-section">
+      <h2>Prendre rendez-vous avec un médecin</h2>
+      <p>Vous pouvez choisir votre praticien, ou laisser la réception vous orienter vers le plus disponible.</p>
+    </div>
+    <div class="grille-medecins">
+      <div class="medecin">
+        <div class="haut">AK</div>
+        <div class="corps">
+          <h3>Dr Amina Kisembo</h3>
+          <div class="role">Pédiatrie · 12 ans d'expérience</div>
+          <p>Vaccinations, suivi de croissance, infections de l'enfant.</p>
+          <span class="creneau">Lun, mer, ven · 08h–14h</span>
+        </div>
+      </div>
+      <div class="medecin">
+        <div class="haut">PL</div>
+        <div class="corps">
+          <h3>Dr Patrick Lofembe</h3>
+          <div class="role">Médecine générale · 9 ans</div>
+          <p>Consultation générale, hypertension, diabète, certificats.</p>
+          <span class="creneau">Mar, jeu, sam · 09h–17h</span>
+        </div>
+      </div>
+      <div class="medecin">
+        <div class="haut">GM</div>
+        <div class="corps">
+          <h3>Dr Grâce Mutombo</h3>
+          <div class="role">Cardiologie · 15 ans</div>
+          <p>ECG, échographie cardiaque, suivi post-hospitalisation.</p>
+          <span class="creneau">Lun au ven · 10h–16h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="infos" class="infos">
+  <div class="contenu infos-grille">
+    <div>
+      <div class="titre-section" style="text-align:left;margin:0 0 26px">
+        <h2>Nous trouver</h2>
+        <p>En plein cœur de la Gombe, à cinq minutes de la place du 30 Juin, avec parking.</p>
+      </div>
+      <div class="bloc-info">
+        <h3>Adresse</h3>
+        <p>Boulevard du 30 Juin, Gombe, Kinshasa</p>
+      </div>
+      <div class="bloc-info">
+        <h3>Réception</h3>
+        <p>+243 815 586 555 · +243 828 501 497</p>
+      </div>
+      <div class="bloc-info">
+        <h3>E-mail</h3>
+        <p>reception@hjhospitals.cd</p>
+      </div>
+    </div>
+    <div>
+      <div class="horaires">
+        <h3 style="font-size:16px">Horaires</h3>
+        <ul>
+          <li><span>Lundi – Vendredi</span> 07h30 – 19h00</li>
+          <li><span>Samedi</span> 08h00 – 14h00</li>
+          <li><span>Dimanche</span> 09h00 – 12h00</li>
+          <li><span>Urgences</span> 24h/24, 7j/7</li>
+        </ul>
+      </div>
+      <div class="urcence">
+        <b>Urgence médicale ?</b>
+        N'attendez pas un rendez-vous, appelez directement le <a href="tel:+243815586555">+243 815 586 555</a>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contenu">
+    <div class="pied">
+      <div>
+        <h4>HJ Hospitals</h4>
+        <p>Centre hospitalier à Gombe, Kinshasa. Médecine générale, pédiatrie, cardiologie, imagerie et urgences 24h.</p>
+      </div>
+      <div>
+        <h4>Accès rapide</h4>
+        <ul>
+          <li><a href="#rdv">Prendre rendez-vous</a></li>
+          <li><a href="#services">Nos services</a></li>
+          <li><a href="#medecins">Nos médecins</a></li>
+          <li><a href="#infos">Horaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Boulevard du 30 Juin, Gombe</li>
+          <li><a href="tel:+243815586555">+243 815 586 555</a></li>
+          <li>reception@hjhospitals.cd</li>
+        </ul>
+      </div>
+    </div>
+    <div class="signature">
+      <span>© 2026 HJ Hospitals — Démonstration.</span>
+      <span>Conçu et développé par <a href="https://wa.me/243977555768">Inspire by YuuStore</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const f = document.getElementById('f');
+  const form = document.getElementById('formulaire');
+  const ok = document.getElementById('ok');
+
+  // date minimale : aujourd'hui
+  const d = document.getElementById('date');
+  const t = new Date();
+  const iso = new Date(t.getTime() - t.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  d.min = iso; d.value = iso;
+
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nom = document.getElementById('nom').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const service = document.getElementById('service').value;
+    const heure = document.getElementById('heure').value;
+    const date = document.getElementById('date').value;
+    if (!nom || !tel || !service || !date || !heure) {
+      alert('Complétez le nom, le téléphone, le service, la date et l\'heure.');
+      return;
+    }
+    const medecin = document.getElementById('medecin').value || 'Médecin disponible';
+    const motif = document.getElementById('motif').value.trim();
+    const jolie = new Date(date + 'T12:00:00').toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long'});
+    document.getElementById('recap').innerHTML =
+      '<b>' + nom + '</b><br>' + service + ' · ' + medecin + '<br>' +
+      jolie + ' à ' + heure + '<br>Confirmation au ' + tel +
+      (motif ? '<br><i>' + motif + '</i>' : '');
+    form.style.display = 'none';
+    ok.style.display = 'block';
+  });
+
+  function recommencer() {
+    ok.style.display = 'none';
+    form.style.display = 'block';
+    f.reset();
+    d.value = iso;
+  }
+</script>
+</body>
+</html>
