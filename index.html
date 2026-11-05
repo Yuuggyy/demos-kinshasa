@@ -24,6 +24,13 @@ section>p{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em
 .btn.ghost{background:transparent;color:var(--a);border:1px solid var(--a)}
 .copier{background:transparent;color:#EDE9E2;border:1px solid rgba(255,255,255,.18);font-weight:500}
 .copier.fait{background:#1E7A4A;color:#fff;border-color:#1E7A4A}
+.pourquoi{font-size:11.5px;color:#A8A294;line-height:1.65}
+.src{font-family:'Space Mono',monospace;font-size:9px;color:#6F6A5E;line-height:1.7}
+.src a{color:#8B8778;text-decoration:none;border-bottom:1px solid #3a382f}
+.tel2{font-family:'Space Mono',monospace;color:#8B8778;font-size:10px}
+.suivi{display:flex;align-items:center;gap:7px;font-size:11.5px;color:#A8A294;cursor:pointer}
+.suivi input{accent-color:#1E7A4A;width:15px;height:15px;cursor:pointer}
+.carte.contacte{opacity:.55;border-left-color:#1E7A4A}
 .produit{display:block;background:#1d2025;border:1px solid rgba(212,175,55,.28);border-radius:14px;padding:18px;text-decoration:none;transition:border-color .2s}
 .produit:hover{border-color:#d4af37}
 .produit b{display:block;color:#e8d9a0;font-size:16px;margin-bottom:7px}
@@ -33,6 +40,81 @@ section>p{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em
 <h1>Démos clients — Kinshasa</h1>
 <p class="sous">39 prospects · 10 menus 3D · 22 sites vitrines · 7 églises<br>
 Cliquez « Copier le message » puis collez dans WhatsApp</p>
+
+<section id="a-contacter">
+<h2>À contacter aujourd'hui</h2>
+<p class="st">Les numéros sont vérifiés, les messages sont prêts. <span id="compteur">0/5 contactés</span> —
+cochez au fur et à mesure, votre suivi est conservé sur cet appareil.</p>
+<div class="grille"><div class="carte prospect" id="pc0" style="--a:#C9A227">
+  <span class="tag">RESTAURANT & TRAITEUR</span>
+  <h3>La Chaumière</h3>
+  <p class="lieu">Gombe &middot; 3469 avenue Ngongo Lutete, Gombe<br>
+    <span class="tel">+243999933721</span></p>
+  <p class="pourquoi">Cuisine congolaise, buffet à 30 $, livraison et traiteur dès 30 personnes. Aucun site, mais le TikTok est animé : le budget communication existe déjà, il ne manque que la vitrine et la carte en ligne.</p>
+  <p class="src">Sources : <a href="https://www.facebook.com/lachaumierekinshasa/" target="_blank">www.facebook.com</a> &middot; <a href="https://www.petitfute.co.uk/kinshasa/ou-manger/restaurants/" target="_blank">www.petitfute.co.uk</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/243999933721?text=Bonjour%2C%20c%27est%20Guy%20Muzongo%2C%20d%C3%A9veloppeur%20%C3%A0%20Kinshasa.%20Je%20vois%20que%20vous%20faites%20le%20buffet%20et%20le%20traiteur%20%3A%20vos%20clients%20vous%20demandent%20s%C3%BBrement%20la%20carte%20en%20photo%20sur%20WhatsApp.%20Je%20fais%20des%20menus%20qu%27on%20scanne%20au%20t%C3%A9l%C3%A9phone%2C%20toujours%20%C3%A0%20jour%2C%20%C3%A0%20vos%20couleurs.%20Je%20vous%20en%20montre%20un%20exemple%20%3F%2010%20minutes%20suffisent." target="_blank" onclick="marquer(0,1)">Ouvrir WhatsApp</a>
+    <a class="btn ghost" href="tel:+243999933721">Appeler</a>
+  </div>
+  <button class="btn copier" onclick="copier(this)" data-msg="Bonjour, c'est Guy Muzongo, développeur à Kinshasa. Je vois que vous faites le buffet et le traiteur : vos clients vous demandent sûrement la carte en photo sur WhatsApp. Je fais des menus qu'on scanne au téléphone, toujours à jour, à vos couleurs. Je vous en montre un exemple ? 10 minutes suffisent.">Copier le message</button>
+  <label class="suivi"><input type="checkbox" id="ck0" onchange="marquer(0, this.checked)"> Contacté</label>
+</div>
+<div class="carte prospect" id="pc1" style="--a:#C9A227">
+  <span class="tag">RESTAURANT & JARDIN</span>
+  <h3>Restaurant Inzia</h3>
+  <p class="lieu">Gombe &middot; 5-6 avenue Caisse d'Épargne, Gombe<br>
+    <span class="tel">+243998601604</span></p>
+  <p class="pourquoi">Buffet bio-congo sur réservation dès 10 personnes, jardin et concerts. Programme et carte changent souvent : un menu en QR évite de tout republier à chaque événement.</p>
+  <p class="src">Sources : <a href="https://www.facebook.com/RestaurantInzia/" target="_blank">www.facebook.com</a> &middot; <a href="https://www.petitfute.co.uk/kinshasa/ou-manger/restaurants/" target="_blank">www.petitfute.co.uk</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/243998601604?text=Bonjour%2C%20Guy%20Muzongo%2C%20d%C3%A9veloppeur%20%C3%A0%20Kinshasa.%20Avec%20vos%20concerts%20et%20vos%20r%C3%A9servations%20de%20groupe%2C%20votre%20programme%20et%20votre%20carte%20changent%20souvent.%20Un%20menu%20en%20QR%20%C3%A0%20votre%20nom%20%C3%A9viterait%20de%20tout%20republier%20chaque%20semaine.%20Je%20vous%20montre%20%C3%A0%20quoi%20%C3%A7a%20ressemble%20%3F" target="_blank" onclick="marquer(1,1)">Ouvrir WhatsApp</a>
+    <a class="btn ghost" href="tel:+243998601604">Appeler</a>
+  </div>
+  <button class="btn copier" onclick="copier(this)" data-msg="Bonjour, Guy Muzongo, développeur à Kinshasa. Avec vos concerts et vos réservations de groupe, votre programme et votre carte changent souvent. Un menu en QR à votre nom éviterait de tout republier chaque semaine. Je vous montre à quoi ça ressemble ?">Copier le message</button>
+  <label class="suivi"><input type="checkbox" id="ck1" onchange="marquer(1, this.checked)"> Contacté</label>
+</div>
+<div class="carte prospect" id="pc2" style="--a:#C9A227">
+  <span class="tag">RESTO-BAR</span>
+  <h3>Firengui Resto-Bar</h3>
+  <p class="lieu">Gombe &middot; 34 avenue Colonel Ebeya, Gombe<br>
+    <span class="tel">+243818554749</span> <a class="tel2" href="https://wa.me/243899804866">+243899804866</a> </p>
+  <p class="pourquoi">Noté 4,8/5 sur Tripadvisor, aucun site, trois espaces (restaurant, terrasse, bar) donc trois cartes à tenir à jour. Fort volume de réservations par téléphone.</p>
+  <p class="src">Sources : <a href="https://www.facebook.com/firengui/" target="_blank">www.facebook.com</a> &middot; <a href="https://www.tripadvisor.com/Restaurant_Review-Kinshasa.html" target="_blank">www.tripadvisor.com</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/243818554749?text=Bonjour%2C%20Guy%20Muzongo%2C%20d%C3%A9veloppeur%20%C3%A0%20Kinshasa.%20Vous%20avez%20trois%20espaces%2C%20donc%20trois%20cartes%20%C3%A0%20tenir%20%C3%A0%20jour%2C%20et%20aujourd%27hui%20tout%20passe%20par%20des%20posts%20Facebook.%20Un%20menu%20scannable%20unique%20r%C3%A9glerait%20%C3%A7a.%20Je%20vous%20montre%20un%20exemple%20%C3%A0%20vos%20couleurs%20%3F" target="_blank" onclick="marquer(2,1)">Ouvrir WhatsApp</a>
+    <a class="btn ghost" href="tel:+243818554749">Appeler</a>
+  </div>
+  <button class="btn copier" onclick="copier(this)" data-msg="Bonjour, Guy Muzongo, développeur à Kinshasa. Vous avez trois espaces, donc trois cartes à tenir à jour, et aujourd'hui tout passe par des posts Facebook. Un menu scannable unique réglerait ça. Je vous montre un exemple à vos couleurs ?">Copier le message</button>
+  <label class="suivi"><input type="checkbox" id="ck2" onchange="marquer(2, this.checked)"> Contacté</label>
+</div>
+<div class="carte prospect" id="pc3" style="--a:#C9A227">
+  <span class="tag">RESTAURANT & HÔTEL</span>
+  <h3>H&R Le Bon Goût</h3>
+  <p class="lieu">Limete &middot; Avenue Ixoras 424, Limete<br>
+    <span class="tel">+243999141694</span> <a class="tel2" href="https://wa.me/243815889628">+243815889628</a> </p>
+  <p class="pourquoi">Restaurant, hôtel et soirées karaoké : trois activités, trois cartes différentes à gérer, aucun site pour les présenter ensemble.</p>
+  <p class="src">Sources : <a href="https://www.facebook.com/herlebonngout/" target="_blank">www.facebook.com</a> &middot; <a href="https://www.petitfute.co.uk/kinshasa/ou-manger/restaurants/" target="_blank">www.petitfute.co.uk</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/243999141694?text=Bonjour%2C%20Guy%20Muzongo%2C%20d%C3%A9veloppeur%20%C3%A0%20Kinshasa.%20Restaurant%2C%20h%C3%B4tel%20et%20soir%C3%A9es%20%3A%20vous%20avez%20trois%20cartes%20diff%C3%A9rentes%20%C3%A0%20g%C3%A9rer.%20Un%20seul%20menu%20en%20QR%2C%20%C3%A0%20jour%20en%20une%20minute%20depuis%20votre%20t%C3%A9l%C3%A9phone%2C%20simplifierait%20tout.%20Je%20vous%20fais%20une%20maquette%20%C3%A0%20votre%20nom%20%3F" target="_blank" onclick="marquer(3,1)">Ouvrir WhatsApp</a>
+    <a class="btn ghost" href="tel:+243999141694">Appeler</a>
+  </div>
+  <button class="btn copier" onclick="copier(this)" data-msg="Bonjour, Guy Muzongo, développeur à Kinshasa. Restaurant, hôtel et soirées : vous avez trois cartes différentes à gérer. Un seul menu en QR, à jour en une minute depuis votre téléphone, simplifierait tout. Je vous fais une maquette à votre nom ?">Copier le message</button>
+  <label class="suivi"><input type="checkbox" id="ck3" onchange="marquer(3, this.checked)"> Contacté</label>
+</div>
+<div class="carte prospect" id="pc4" style="--a:#C9A227">
+  <span class="tag">RESTAURANT & TRAITEUR ÉVÉNEMENTIEL</span>
+  <h3>Rocas</h3>
+  <p class="lieu">Gombe &middot; 1022 avenue des Forces Armées, Galerie Gombe River, Gombe<br>
+    <span class="tel">+243824850760</span></p>
+  <p class="pourquoi">Menu du jour republié en permanence et présence sur des stands en festivals. Numéro relevé sur annuaire relais, à reconfirmer au premier contact.</p>
+  <p class="src">Sources : <a href="https://www.facebook.com/rocaskin/" target="_blank">www.facebook.com</a> &middot; <a href="https://kinpresta.com/listing/rocas-kinshasa/" target="_blank">kinpresta.com</a></p>
+  <div class="actions">
+    <a class="btn" href="https://wa.me/243824850760?text=Bonjour%2C%20Guy%20Muzongo%2C%20d%C3%A9veloppeur%20%C3%A0%20Kinshasa.%20Votre%20menu%20du%20jour%20est%20republi%C3%A9%20chaque%20semaine%20sur%20Facebook.%20Avec%20un%20menu%20en%20QR%2C%20il%20est%20%C3%A0%20jour%20en%20une%20minute%20et%20vos%20clients%20le%20scannent%20m%C3%AAme%20sur%20votre%20stand%20en%20festival.%20%C3%87a%20vous%20int%C3%A9resse%20de%20voir%20%3F" target="_blank" onclick="marquer(4,1)">Ouvrir WhatsApp</a>
+    <a class="btn ghost" href="tel:+243824850760">Appeler</a>
+  </div>
+  <button class="btn copier" onclick="copier(this)" data-msg="Bonjour, Guy Muzongo, développeur à Kinshasa. Votre menu du jour est republié chaque semaine sur Facebook. Avec un menu en QR, il est à jour en une minute et vos clients le scannent même sur votre stand en festival. Ça vous intéresse de voir ?">Copier le message</button>
+  <label class="suivi"><input type="checkbox" id="ck4" onchange="marquer(4, this.checked)"> Contacté</label>
+</div></div></section>
 
 <section><h2>Logiciels prêts à livrer</h2>
 <p class="st">Les produits finis, en ligne, avec les accès de démonstration.</p>
@@ -44,15 +126,6 @@ Cliquez « Copier le message » puis collez dans WhatsApp</p>
 <a class="produit" href="https://yuuggyy.github.io/416flutter/" target="_blank"><b>416 Records</b><span>Plateforme musicale : artistes, films, quicks, casting, fidélité.</span><i>yuuggyy.github.io/416flutter</i></a>
 <a class="produit" href="https://lcoy.fanya.org/" target="_blank"><b>LCOY RDC 2026</b><span>Inscription en ligne, tableau de bord organisateurs, export CSV.</span><i>lcoy.fanya.org</i></a>
 <a class="produit" href="https://yuu-offres.surge.sh/" target="_blank"><b>Offre commerciale &amp; devis</b><span>Grille tarifaire, devis écoles en Word, facture et reçu à signer.</span><i>yuu-offres.surge.sh</i></a>
-<a class="produit" href="https://limoncello-django.surge.sh/" target="_blank"><b>Menu Limoncello</b><span>Cahier à spirale, 8 catégories, 111 plats, panier et commandes avec backend Django.</span><i>limoncello-django.surge.sh</i></a>
-<a class="produit" href="https://menu3d-django.surge.sh/" target="_blank"><b>Menu3D, 21 restaurants</b><span>Un seul moteur, 293 plats, un menu 3D par restaurant.</span><i>menu3d-django.surge.sh</i></a>
-<a class="produit" href="https://olive-verte-django.surge.sh/" target="_blank"><b>Menu L'Olive Verte</b><span>Page qui se courbe au doigt, 7 catégories, repli hors ligne.</span><i>olive-verte-django.surge.sh</i></a>
-<a class="produit" href="https://yuuggyy.github.io/cskn-erp/" target="_blank"><b>CSKN ERP</b><span>Agriculture, production, qualité, distribution, RH, finances. 10 rôles.</span><i>yuuggyy.github.io/cskn-erp</i></a>
-<a class="produit" href="https://yuuggyy.github.io/rawbank-demo/" target="_blank"><b>RawBank</b><span>Banque mobile : tableau de bord, IllicoCash, KYC, financement de projets, assistant IA.</span><i>yuuggyy.github.io/rawbank-demo</i></a>
-<a class="produit" href="https://yuuggyy.github.io/b-one-tv-app/" target="_blank"><b>B-One TV</b><span>Chaînes en direct, replay, grille des programmes, emplacements publicitaires.</span><i>yuuggyy.github.io/b-one-tv-app</i></a>
-<a class="produit" href="https://yuuggyy.github.io/yuustore-marketplace/" target="_blank"><b>YuuStore Marketplace</b><span>Catalogue multi-vendeurs, panier, paiement mobile money.</span><i>yuuggyy.github.io/yuustore-marketplace</i></a>
-<a class="produit" href="https://pulse-jeune-hub.base44.app" target="_blank"><b>PulseJeune Hub</b><span>Plateforme communautaire : articles, événements, profils membres.</span><i>pulse-jeune-hub.base44.app</i></a>
-<a class="produit" href="https://yuu-offres.surge.sh/projects.html" target="_blank"><b>Liste des projets en anglais</b><span>Les 17 projets avec catégorie, compétences, année et rôle, prêts pour Upwork.</span><i>yuu-offres.surge.sh/projects.html</i></a>
 <a class="produit" href="https://guy-upwork-kit.surge.sh/" target="_blank"><b>Kit profil Upwork</b><span>Titre, présentation, 6 projets de portfolio avec captures, propositions types.</span><i>guy-upwork-kit.surge.sh</i></a>
 </div>
 <p class="st" style="margin-top:14px">Écoles déjà configurées dans ScolaConnect : direction@leschampions.cd / Champions!2026 &middot; direction@lpl.cd / Demo!2026 &middot; direction@tasok.cd / Demo!2026</p>
@@ -472,6 +545,28 @@ Cliquez « Copier le message » puis collez dans WhatsApp</p>
 </div></div></section>
 
 <script>
+const SUIVI_CLE = "prospects_contactes";
+function suivi(){ try{ return JSON.parse(localStorage.getItem(SUIVI_CLE)||"{}") }catch(e){ return {} } }
+function marquer(i, etat){
+  const s = suivi(); s[i] = !!etat; localStorage.setItem(SUIVI_CLE, JSON.stringify(s));
+  document.getElementById("pc"+i).classList.toggle("contacte", !!etat);
+  document.getElementById("ck"+i).checked = !!etat;
+  majCompteur();
+}
+function majCompteur(){
+  const s = suivi(), faits = Object.values(s).filter(Boolean).length;
+  const c = document.getElementById("compteur");
+  if(c) c.textContent = faits + "/" + document.querySelectorAll(".prospect").length + " contactés";
+}
+function chargerSuivi(){
+  const s = suivi();
+  Object.keys(s).forEach(function(i){
+    const carte = document.getElementById("pc"+i), ck = document.getElementById("ck"+i);
+    if(carte){ carte.classList.toggle("contacte", !!s[i]); ck.checked = !!s[i]; }
+  });
+  majCompteur();
+}
+document.addEventListener("DOMContentLoaded", chargerSuivi);
 function copier(b){
   navigator.clipboard.writeText(b.dataset.msg).then(()=>{
     b.textContent="Message copié ✓"; b.classList.add("fait");
