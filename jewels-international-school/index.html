@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jewels International School — Kinshasa</title>
+<meta name="description" content="Jewels International School of Kinshasa : continuum IB complet (EYP, PYP, MYP, DP), campus à Ngaliema. Admissions ouvertes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#15231C; --ink-soft:#3D4A43; --mute:#7C8781;
+  --cream:#F7F4ED; --cream-2:#EFEAE0; --line:rgba(21,35,28,.13);
+  --green:#1F4A38; --gold:#A8874C;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:Inter,-apple-system,sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.14;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+header{position:sticky;top:0;z-index:50;background:rgba(247,244,237,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:38px;height:38px;border:1px solid var(--green);border-radius:50%;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--green)}
+.brand b{display:block;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;letter-spacing:.01em;line-height:1.1}
+.brand span{display:block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:3px}
+.menu{display:flex;align-items:center;gap:30px;font-size:13px;color:var(--ink-soft)}
+.menu a:hover{color:var(--green)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;padding:13px 24px;border-radius:2px;font-size:13px;font-weight:500;letter-spacing:.02em;border:1px solid var(--green);transition:.25s}
+.btn:hover{background:#163A2B}
+.btn.ghost{background:transparent;color:var(--green)}
+.btn.ghost:hover{background:rgba(31,74,56,.07)}
+
+.hero{padding:96px 0 88px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 420px at 88% 8%,rgba(168,135,76,.10),transparent 65%),
+  radial-gradient(700px 380px at 6% 92%,rgba(31,74,56,.07),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(42px,6vw,74px);max-width:15ch;margin:22px 0 0}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero p.lead{max-width:56ch;margin-top:24px;font-size:16.5px;color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.rule{height:1px;background:var(--line);margin-top:64px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:28px}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:var(--green);line-height:1}
+.stat span{display:block;font-size:12px;color:var(--mute);margin-top:8px;letter-spacing:.02em}
+
+section{padding:88px 0}
+.sec-head{max-width:60ch;margin-bottom:48px}
+.sec-head h2{font-size:clamp(30px,3.6vw,44px);margin-top:14px}
+.sec-head p{margin-top:16px;color:var(--ink-soft);font-size:15.5px}
+
+.prog{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pcard{background:var(--cream);padding:32px 26px 34px;transition:.3s}
+.pcard:hover{background:var(--cream-2)}
+.pcard small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.pcard h3{font-size:25px;margin:14px 0 6px}
+.pcard .age{font-size:11.5px;color:var(--mute);letter-spacing:.04em}
+.pcard p{font-size:13.5px;color:var(--ink-soft);margin-top:14px}
+
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.steps{counter-reset:s;margin-top:8px}
+.step{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.step:before{content:"0" counter(s);font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);padding-top:2px}
+.step h3{font-size:21px;margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--ink-soft)}
+
+.form-box{background:#fff;border:1px solid var(--line);padding:34px 30px;border-radius:3px;box-shadow:0 24px 60px -40px rgba(21,35,28,.35)}
+.form-box h3{font-size:26px}
+.form-box>p{font-size:12.5px;color:var(--mute);margin:8px 0 22px}
+label{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:7px}
+input,select,textarea{width:100%;font-family:Inter,sans-serif;font-size:14px;font-weight:300;color:var(--ink);background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:12px 13px;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--green);background:#fff}
+textarea{resize:vertical;min-height:78px}
+.field{margin-bottom:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-box button{width:100%;margin-top:6px;cursor:pointer;font-family:Inter,sans-serif}
+.rep{display:none;margin-top:16px;font-size:13px;line-height:1.65;color:var(--ink-soft);background:var(--cream-2);padding:14px 16px;border-left:2px solid var(--green)}
+.rep.on{display:block}
+.rep a{color:var(--green);font-weight:500;border-bottom:1px solid var(--green)}
+
+.quote{background:var(--green);color:#EFEADF}
+.quote .wrap{padding:0 28px}
+.quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);line-height:1.35;font-weight:400;max-width:34ch}
+.quote cite{display:block;margin-top:26px;font-family:Inter,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:#BFCDBF}
+
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;padding-top:8px}
+.contact h3{font-size:19px;margin-bottom:10px}
+.contact p,.contact a{font-size:13.5px;color:var(--ink-soft);line-height:1.9}
+.contact a:hover{color:var(--green)}
+
+footer{border-top:1px solid var(--line);padding:34px 0 40px;background:var(--cream-2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;font-size:12px;color:var(--mute)}
+footer b{font-weight:500;color:var(--ink-soft)}
+footer a.yuu{color:var(--green);border-bottom:1px solid rgba(31,74,56,.4);padding-bottom:1px}
+
+@media(max-width:900px){
+  .split{grid-template-columns:1fr;gap:38px}
+  .contact{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;gap:26px}
+  .menu{display:none}
+  section{padding:64px 0}
+  .hero{padding:64px 0 56px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="mark">J</div>
+      <div>
+        <b>Jewels International</b>
+        <span>School of Kinshasa</span>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#programmes">Programmes</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#ecole">L'école</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#admissions">Demander une visite</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">IB World School · Ngaliema, Kinshasa</p>
+    <h1>Un parcours <em>continu</em>, de la petite enfance au diplôme.</h1>
+    <p class="lead">Jewels International School accompagne chaque élève à travers les quatre programmes du Baccalauréat International. Un campus à taille humaine, des enseignants venus du monde entier, et une exigence simple : que chaque enfant apprenne à penser par lui-même.</p>
+    <div class="actions">
+      <a class="btn" href="#admissions">Réserver une visite du campus</a>
+      <a class="btn ghost" href="#programmes">Découvrir les programmes</a>
+    </div>
+    <div class="rule"></div>
+    <div class="stats">
+      <div class="stat"><b>4</b><span>Programmes IB (EYP → DP)</span></div>
+      <div class="stat"><b>800+</b><span>Élèves sur le campus</span></div>
+      <div class="stat"><b>20+</b><span>Nationalités représentées</span></div>
+      <div class="stat"><b>FR / EN</b><span>Enseignement bilingue</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="programmes">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Les programmes</p>
+      <h2>Une seule école, un seul fil conducteur.</h2>
+      <p>Le continuum IB évite les ruptures : l'élève progresse dans la même philosophie d'apprentissage, de l'école maternelle jusqu'aux portes de l'université.</p>
+    </div>
+    <div class="prog">
+      <div class="pcard">
+        <small>EYP</small>
+        <h3>Petite enfance</h3>
+        <div class="age">Apprendre par le jeu</div>
+        <p>Un cadre bilingue et bienveillant où la curiosité, le langage et le geste se construisent en confiance.</p>
+      </div>
+      <div class="pcard">
+        <small>PYP</small>
+        <h3>Primaire</h3>
+        <div class="age">Comprendre le monde</div>
+        <p>Des projets interdisciplinaires, la lecture, les sciences et les arts, avec une place réelle donnée à l'expression.</p>
+      </div>
+      <div class="pcard">
+        <small>MYP</small>
+        <h3>Collège</h3>
+        <div class="age">Structurer sa pensée</div>
+        <p>Rigueur académique, méthode de travail, langues et ouverture internationale, sans perdre le goût d'apprendre.</p>
+      </div>
+      <div class="pcard">
+        <small>DP</small>
+        <h3>Diplôme</h3>
+        <div class="age">Viser l'université</div>
+        <p>Le diplôme du Baccalauréat International, reconnu par les universités du monde entier, préparé sérieusement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="admissions" style="background:var(--cream-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Admissions 2026 – 2027</p>
+      <h2 style="font-size:clamp(30px,3.4vw,42px);margin-top:14px">Quatre étapes, sans dossier perdu.</h2>
+      <div class="steps">
+        <div class="step">
+          <div><h3>Prendre contact</h3><p>Un message suffit. Le service des admissions vous rappelle pour cerner le niveau et la date d'entrée souhaités.</p></div>
+        </div>
+        <div class="step">
+          <div><h3>Visiter le campus</h3><p>Vous rencontrez un membre de la direction, vous visitez les classes, la bibliothèque et le laboratoire.</p></div>
+        </div>
+        <div class="step">
+          <div><h3>Déposer le dossier</h3><p>Bulletins des deux dernières années, pièce d'identité de l'élève, carnet de vaccination.</p></div>
+        </div>
+        <div class="step">
+          <div><h3>Confirmer la place</h3><p>Un entretien de niveau et une rencontre avec l'enseignant référent, puis la place est réservée.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h3>Demander une visite</h3>
+      <p>Réponse du service des admissions, du lundi au vendredi.</p>
+      <form id="f">
+        <div class="field">
+          <label for="nom">Nom du parent</label>
+          <input id="nom" name="nom" placeholder="Nom et prénom" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone / WhatsApp</label>
+          <input id="tel" name="tel" placeholder="+243 …" inputmode="tel" autocomplete="tel">
+        </div>
+        <div class="field two">
+          <div>
+            <label for="niveau">Niveau souhaité</label>
+            <select id="niveau" name="niveau">
+              <option>Petite enfance (EYP)</option>
+              <option>Primaire (PYP)</option>
+              <option>Collège (MYP)</option>
+              <option>Diplôme (DP)</option>
+            </select>
+          </div>
+          <div>
+            <label for="rentree">Rentrée</label>
+            <select id="rentree" name="rentree">
+              <option>2026 – 2027</option>
+              <option>Janvier 2027</option>
+              <option>2027 – 2028</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="msg">Votre question (facultatif)</label>
+          <textarea id="msg" name="msg" placeholder="Précisez le niveau actuel de l'enfant, la langue, la date d'arrivée à Kinshasa…"></textarea>
+        </div>
+        <button class="btn" type="submit">Envoyer la demande</button>
+        <div class="rep" id="rep"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>« Garantir à chaque élève un enseignement de qualité supérieure, dans un environnement convivial, sûr et culturellement riche. »</blockquote>
+    <cite>Énoncé de mission · Jewels International School</cite>
+  </div>
+</section>
+
+<section id="ecole">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:34px">
+      <p class="eyebrow">L'école</p>
+      <h2>Un campus calme, au cœur de Ngaliema.</h2>
+      <p>Classes climatisées, bibliothèque, salle d'informatique, laboratoire de sciences, salle d'arts, cantine privée et espace de pleine conscience. Les élèves y passent leurs journées dans un cadre qui donne envie de rester.</p>
+    </div>
+    <div class="prog" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <div class="pcard"><small>Campus</small><h3>6705, av. de l'O.U.A.</h3><p>Ngaliema, Kinshasa. Accès direct depuis le boulevard.</p></div>
+      <div class="pcard"><small>Langues</small><h3>Bilingue</h3><p>Enseignement en anglais et en français, du primaire au diplôme.</p></div>
+      <div class="pcard"><small>Vie scolaire</small><h3>Activités</h3><p>Activités parascolaires et programmes de grandes vacances.</p></div>
+      <div class="pcard"><small>Accueil</small><h3>Familles expatriées</h3><p>Un suivi particulier pour les arrivées en cours d'année.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:30px">
+      <p class="eyebrow">Nous joindre</p>
+      <h2 style="font-size:36px">Le service des admissions.</h2>
+    </div>
+    <div class="contact">
+      <div>
+        <h3>Adresse</h3>
+        <p>6705, avenue de l'O.U.A.<br>Commune de Ngaliema<br>Kinshasa, RDC</p>
+      </div>
+      <div>
+        <h3>Téléphone</h3>
+        <p><a href="tel:+243818888839">+243 81 888 88 39</a><br><a href="tel:+243826239510">+243 82 623 95 10</a></p>
+      </div>
+      <div>
+        <h3>Écrire</h3>
+        <p><a href="mailto:info@jiskdrc.com">info@jiskdrc.com</a><br>Du lundi au vendredi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>Jewels International School</b> · Ngaliema, Kinshasa</span>
+    <span>Maquette réalisée par <a class="yuu" href="https://wa.me/243977555768" target="_blank" rel="noopener">Inspire by YuuStore</a></span>
+  </div>
+</footer>
+
+<script>
+  const f = document.getElementById('f');
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nom = f.nom.value.trim();
+    const tel = f.tel.value.trim();
+    const rep = document.getElementById('rep');
+    if (nom.length < 2 || tel.replace(/\D/g, '').length < 8) {
+      rep.className = 'rep on';
+      rep.innerHTML = '<strong>Il manque un nom ou un numéro valide.</strong> Sans cela, le service des admissions ne peut pas vous rappeler.';
+      return;
+    }
+    const texte = "Demande de visite - Jewels International School%0A"
+      + "Parent : " + encodeURIComponent(nom) + "%0A"
+      + "Telephone : " + encodeURIComponent(tel) + "%0A"
+      + "Niveau : " + encodeURIComponent(f.niveau.value) + "%0A"
+      + "Rentree : " + encodeURIComponent(f.rentree.value) + "%0A"
+      + "Question : " + encodeURIComponent(f.msg.value || "-");
+    rep.className = 'rep on';
+    rep.innerHTML = '<strong>Demande prête, ' + nom.split(' ')[0] + '.</strong><br>'
+      + 'Sur la version en ligne, elle arrive directement au service des admissions, avec un rappel programmé. '
+      + 'Dans cette maquette, elle part par WhatsApp.<br><br>'
+      + '<a target="_blank" rel="noopener" href="https://wa.me/243818888839?text=' + texte + '">Envoyer au service des admissions →</a>';
+  });
+</script>
+</body>
+</html>
