@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Général Auto RDC — Vente, location et entretien automobile à Kinshasa</title>
+<meta name="description" content="Général Auto RDC : vente de véhicules Toyota neufs et d'occasion, location automobile avec chauffeur, garage d'entretien et pièces de rechange d'origine à Kinshasa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --encre:#14161A;
+    --encre-doux:#5D6470;
+    --papier:#FFFFFF;
+    --calcaire:#F4F5F7;
+    --trait:#E3E5E9;
+    --accent:#B3121B;
+    --accent-clair:#FBEDEE;
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--papier);color:var(--encre);
+    font-family:'Inter',system-ui,sans-serif;font-weight:400;
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .enveloppe{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* ---------- entête ---------- */
+  header{
+    position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--trait);
+  }
+  .barre{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .marque{display:flex;align-items:baseline;gap:10px}
+  .marque b{
+    font-family:'Barlow Condensed',sans-serif;font-size:23px;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;
+  }
+  .marque span{
+    font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--encre-doux);
+  }
+  nav{display:flex;align-items:center;gap:34px}
+  nav a{
+    font-size:13px;letter-spacing:.03em;color:var(--encre-doux);
+    padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;
+  }
+  nav a:hover{color:var(--encre);border-color:var(--accent)}
+  .tel-top{
+    font-size:13px;font-weight:500;letter-spacing:.02em;
+    border:1px solid var(--trait);border-radius:2px;padding:9px 16px;transition:border-color .2s,color .2s;
+  }
+  .tel-top:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- héros ---------- */
+  .heros{border-bottom:1px solid var(--trait);background:var(--calcaire)}
+  .heros-grille{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    padding:86px 0 74px;
+  }
+  .surtitre{
+    font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:22px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .surtitre::before{content:'';width:34px;height:1px;background:var(--accent)}
+  h1{
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    font-size:clamp(42px,5.6vw,68px);line-height:1.02;letter-spacing:-.01em;
+    text-transform:uppercase;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .chapo{
+    margin-top:26px;font-size:16.5px;color:var(--encre-doux);
+    max-width:46ch;font-weight:300;line-height:1.8;
+  }
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:15px 28px;font-size:13.5px;font-weight:500;letter-spacing:.03em;
+    border-radius:2px;transition:transform .18s,background .2s,border-color .2s,color .2s;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-plein{background:var(--encre);color:#fff}
+  .btn-plein:hover{background:var(--accent)}
+  .btn-ligne{border-color:var(--encre);color:var(--encre)}
+  .btn-ligne:hover{background:var(--encre);color:#fff}
+  .btn svg{width:15px;height:15px;flex:none}
+
+  .heros-visuel{position:relative;aspect-ratio:4/3;border:1px solid var(--trait);background:#fff;overflow:hidden}
+  .heros-visuel svg{width:100%;height:100%;display:block}
+  .etiquette{
+    position:absolute;left:0;bottom:0;background:var(--encre);color:#fff;
+    padding:13px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  }
+
+  /* ---------- chiffres ---------- */
+  .chiffres{border-bottom:1px solid var(--trait)}
+  .chiffres-grille{display:grid;grid-template-columns:repeat(3,1fr)}
+  .chiffre{padding:34px 0;text-align:center;border-right:1px solid var(--trait)}
+  .chiffre:last-child{border-right:none}
+  .chiffre b{
+    display:block;font-family:'Barlow Condensed',sans-serif;font-size:30px;
+    font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+  }
+  .chiffre span{
+    display:block;margin-top:6px;font-size:11px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--encre-doux);
+  }
+
+  /* ---------- sections ---------- */
+  section{padding:90px 0}
+  .tete-section{max-width:620px;margin-bottom:52px}
+  h2{
+    font-family:'Barlow Condensed',sans-serif;font-weight:600;
+    font-size:clamp(30px,3.6vw,42px);line-height:1.1;text-transform:uppercase;letter-spacing:.01em;
+  }
+  .tete-section p{margin-top:16px;color:var(--encre-doux);font-weight:300;font-size:15.5px}
+
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait);border:1px solid var(--trait)}
+  .service{background:#fff;padding:34px 30px 36px;transition:background .2s}
+  .service:hover{background:var(--calcaire)}
+  .ico{
+    width:38px;height:38px;display:grid;place-items:center;
+    border:1px solid var(--trait);color:var(--accent);margin-bottom:22px;
+  }
+  .ico svg{width:19px;height:19px}
+  .service h3{
+    font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;
+  }
+  .service p{font-size:14px;color:var(--encre-doux);font-weight:300;line-height:1.75}
+
+  /* ---------- parc ---------- */
+  .parc{background:var(--calcaire);border-top:1px solid var(--trait);border-bottom:1px solid var(--trait)}
+  .types{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .type{
+    background:#fff;border:1px solid var(--trait);padding:26px 22px;
+    display:flex;flex-direction:column;gap:8px;transition:border-color .2s;
+  }
+  .type:hover{border-color:var(--accent)}
+  .type b{
+    font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;
+  }
+  .type span{font-size:12.5px;color:var(--encre-doux);font-weight:300;line-height:1.6}
+
+  /* ---------- processus ---------- */
+  .etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:8px}
+  .etape{border-top:1px solid var(--encre);padding-top:20px}
+  .etape i{
+    font-family:'Barlow Condensed',sans-serif;font-style:normal;font-size:13px;
+    font-weight:700;letter-spacing:.1em;color:var(--accent);
+  }
+  .etape h4{
+    font-size:15.5px;font-weight:600;margin:10px 0 8px;letter-spacing:.01em;
+  }
+  .etape p{font-size:13.5px;color:var(--encre-doux);font-weight:300;line-height:1.7}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--encre);color:#fff;padding:82px 0 76px}
+  .contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .contact h2{color:#fff}
+  .contact .chapo{color:#A9AFBA;margin-top:20px}
+  .contact .surtitre{color:#E88A90}
+  .contact .surtitre::before{background:#E88A90}
+  .coordonnees{display:flex;flex-direction:column;gap:2px;margin-top:8px}
+  .coord{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:19px 22px;background:#1C1F25;border-left:2px solid transparent;
+    transition:border-color .2s,background .2s;
+  }
+  .coord:hover{border-color:var(--accent);background:#22262D}
+  .coord-txt small{
+    display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    color:#7E8592;margin-bottom:5px;
+  }
+  .coord-txt b{font-size:15px;font-weight:500;letter-spacing:.02em}
+  .coord svg{width:16px;height:16px;color:#7E8592;flex:none}
+
+  /* ---------- pied ---------- */
+  footer{background:#0E1013;color:#7E8592;padding:32px 0;border-top:1px solid #21252B}
+  .pied{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .pied p{font-size:12px;font-weight:300;letter-spacing:.02em}
+  .pied-yuu{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;
+    color:#C6CBD4;border-bottom:1px solid #333942;padding-bottom:2px;transition:color .2s,border-color .2s;
+  }
+  .pied-yuu:hover{color:#fff;border-color:#7E8592}
+  .pied-yuu svg{width:14px;height:14px}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .heros-grille{grid-template-columns:1fr;gap:38px;padding:56px 0 48px}
+    .heros-visuel{order:-1;aspect-ratio:16/10}
+    .services,.types{grid-template-columns:1fr 1fr}
+    .etapes{grid-template-columns:1fr 1fr;gap:26px}
+    .contact-grille{grid-template-columns:1fr;gap:36px}
+    nav{display:none}
+    .chiffres-grille{grid-template-columns:1fr}
+    .chiffre{border-right:none;border-bottom:1px solid var(--trait);padding:26px 0}
+    .chiffre:last-child{border-bottom:none}
+    section{padding:64px 0}
+  }
+  @media(max-width:580px){
+    .services,.types{grid-template-columns:1fr}
+    .etapes{grid-template-columns:1fr}
+    .barre{height:64px}
+    .marque span{display:none}
+    .btn{width:100%;justify-content:center}
+    .pied{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="enveloppe barre">
+    <div class="marque">
+      <b>Général Auto</b><span>Kinshasa · RDC</span>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#parc">Véhicules</a>
+      <a href="#methode">Comment ça marche</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="tel-top" href="tel:+243978461303">+243 978 461 303</a>
+  </div>
+</header>
+
+<div class="heros">
+  <div class="enveloppe heros-grille">
+    <div>
+      <p class="surtitre">Vente · Location · Entretien</p>
+      <h1>Votre véhicule<br>à Kinshasa,<br><em>sans détour.</em></h1>
+      <p class="chapo">Toyota neuf et d'occasion en stock à Kinshasa, location avec chauffeur
+      pour vos déplacements et vos événements, garage d'entretien et pièces d'origine.
+      Un seul interlocuteur, du devis à la remise des clés.</p>
+      <div class="actions">
+        <a class="btn btn-plein" href="https://wa.me/243978461303?text=Bonjour%20G%C3%A9n%C3%A9ral%20Auto%2C%20je%20souhaite%20un%20devis%20pour%20un%20v%C3%A9hicule.">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24s-3.7 8.24-8.24 8.24m4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.9 2.4 1.02 2.57c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.48-.61 1.69-1.19.21-.59.21-1.09.14-1.19-.06-.11-.22-.17-.47-.29"/></svg>
+          Demander un devis
+        </a>
+        <a class="btn btn-ligne" href="#services">Voir les services</a>
+      </div>
+    </div>
+    <div class="heros-visuel">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Silhouette de véhicule">
+        <defs>
+          <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EDEFF2"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="300" fill="url(#ciel)"/>
+        <circle cx="318" cy="74" r="34" fill="none" stroke="#DDE0E5" stroke-width="1"/>
+        <line x1="0" y1="228" x2="400" y2="228" stroke="#C9CDD3" stroke-width="1"/>
+        <g fill="none" stroke="#14161A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M64 226 L78 176 Q82 162 96 162 L232 162 Q248 162 256 174 L288 214 L334 221 Q340 222 340 228 L340 228 L64 228 Z"/>
+          <path d="M118 162 L134 122 Q137 114 146 114 L208 114 Q216 114 219 122 L234 162"/>
+          <path d="M150 114 L150 162 M204 114 L204 162"/>
+          <line x1="64" y1="228" x2="340" y2="228"/>
+        </g>
+        <circle cx="130" cy="228" r="19" fill="#fff" stroke="#14161A" stroke-width="2"/>
+        <circle cx="130" cy="228" r="7" fill="#B3121B"/>
+        <circle cx="284" cy="228" r="19" fill="#fff" stroke="#14161A" stroke-width="2"/>
+        <circle cx="284" cy="228" r="7" fill="#B3121B"/>
+        <line x1="256" y1="166" x2="292" y2="212" stroke="#B3121B" stroke-width="2"/>
+      </svg>
+      <span class="etiquette">Stock disponible à Kinshasa</span>
+    </div>
+  </div>
+</div>
+
+<div class="chiffres">
+  <div class="enveloppe chiffres-grille">
+    <div class="chiffre"><b>Neuf &amp; occasion</b><span>Toute la gamme Toyota</span></div>
+    <div class="chiffre"><b>Court &amp; long terme</b><span>Location avec chauffeur</span></div>
+    <div class="chiffre"><b>Entretien express</b><span>Garage et pièces d'origine</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="enveloppe">
+    <div class="tete-section">
+      <h2>Trois métiers,<br>un même interlocuteur</h2>
+      <p>Acheter, louer ou entretenir : l'équipe suit votre dossier de bout en bout,
+      y compris après la livraison.</p>
+    </div>
+    <div class="services">
+      <article class="service">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17h1.5l1.2-4h12.6l1.2 4H21"/><path d="M6.5 13l1.4-4.2A1.6 1.6 0 0 1 9.4 7.8h5.2a1.6 1.6 0 0 1 1.5 1L17.5 13"/>
+            <circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/>
+          </svg>
+        </div>
+        <h3>Vente de véhicules</h3>
+        <p>Véhicules neufs et d'occasion, principalement de marque Toyota, accompagnés
+        d'une garantie constructeur et d'un service après-vente. Stock à Kinshasa,
+        import sur commande pour les modèles non disponibles.</p>
+      </article>
+      <article class="service">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/>
+          </svg>
+        </div>
+        <h3>Location automobile</h3>
+        <p>Une large gamme disponible à la location, à la journée, pour une mission
+        ou sur une longue durée, avec chauffeurs professionnels. Réservation à
+        l'avance pour vos déplacements et vos événements.</p>
+      </article>
+      <article class="service">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.6 4.2a4.6 4.6 0 0 0 5.5 6.1l-8.9 8.9a2.7 2.7 0 0 1-3.8-3.8z"/>
+            <path d="M4.5 19.5l2.4-2.4"/>
+          </svg>
+        </div>
+        <h3>Garage &amp; pièces</h3>
+        <p>Garage d'entretien express équipé aux normes de la mécanique actuelle,
+        avec des mécaniciens formés. Pièces de rechange d'origine Toyota
+        disponibles en atelier.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="parc" id="parc">
+  <div class="enveloppe" style="padding-top:90px;padding-bottom:90px">
+    <div class="tete-section">
+      <h2>Ce que nous mettons<br>à votre disposition</h2>
+      <p>Du véhicule de direction au bus de groupe. Dites-nous l'usage,
+      nous proposons la carrosserie adaptée.</p>
+    </div>
+    <div class="types">
+      <div class="type"><b>Berline</b><span>Déplacements en ville, chauffeur privé, mise à disposition longue durée.</span></div>
+      <div class="type"><b>4x4 &amp; SUV</b><span>Routes difficiles, missions hors centre-ville, familles.</span></div>
+      <div class="type"><b>Van</b><span>Transport d'équipe, transferts aéroport, séjours.</span></div>
+      <div class="type"><b>Pick-up</b><span>Chantiers, logistique, usage professionnel intensif.</span></div>
+      <div class="type"><b>Bus</b><span>Groupes, événements, navettes d'entreprise.</span></div>
+      <div class="type"><b>Occasion révisée</b><span>Véhicules contrôlés en atelier avant remise.</span></div>
+    </div>
+    <p style="margin-top:26px;font-size:13px;color:#5D6470;font-weight:300">
+      Disponibilité et tarifs sur demande : le parc évolue chaque semaine.
+    </p>
+  </div>
+</div>
+
+<section id="methode">
+  <div class="enveloppe">
+    <div class="tete-section">
+      <h2>Quatre étapes,<br>aucune surprise</h2>
+      <p>Un dossier clair, du premier message à la remise des clés.</p>
+    </div>
+    <div class="etapes">
+      <div class="etape"><i>01</i><h4>Vous écrivez</h4><p>Un message WhatsApp ou un appel suffit : usage, durée, budget.</p></div>
+      <div class="etape"><i>02</i><h4>Nous chiffrons</h4><p>Une proposition écrite avec le véhicule, la durée et le prix total.</p></div>
+      <div class="etape"><i>03</i><h4>Vous validez</h4><p>Visite du véhicule en atelier, essai et vérification des papiers.</p></div>
+      <div class="etape"><i>04</i><h4>Remise des clés</h4><p>Livraison à Kinshasa, puis suivi pour l'entretien et les pièces.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="enveloppe contact-grille">
+    <div>
+      <p class="surtitre">Contact</p>
+      <h2>Parlons de<br>votre besoin</h2>
+      <p class="chapo">Une question sur un véhicule, une location à organiser,
+      une pièce à commander : nous répondons directement, sans formulaire à rallonge.</p>
+      <div class="actions">
+        <a class="btn btn-plein" href="https://wa.me/243978461303?text=Bonjour%20G%C3%A9n%C3%A9ral%20Auto%2C%20je%20vous%20contacte%20au%20sujet%20d%27un%20v%C3%A9hicule.">
+          Écrire sur WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="coordonnees">
+      <a class="coord" href="tel:+243978461303">
+        <span class="coord-txt"><small>Téléphone · devis</small><b>+243 978 461 303</b></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.9v2.6a1.7 1.7 0 0 1-1.9 1.7 17 17 0 0 1-7.4-2.6 16.7 16.7 0 0 1-5.1-5.1A17 17 0 0 1 4 6.1 1.7 1.7 0 0 1 5.7 4h2.6a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.6.6 2.4a1.7 1.7 0 0 1-.4 1.8L9.1 10.8a13.6 13.6 0 0 0 5.1 5.1l1.1-1.1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.6.5 2.4.6a1.7 1.7 0 0 1 1.5 1.9z"/></svg>
+      </a>
+      <a class="coord" href="https://wa.me/243978461303" target="_blank" rel="noopener">
+        <span class="coord-txt"><small>WhatsApp</small><b>+243 978 461 303</b></span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24s-3.7 8.24-8.24 8.24"/></svg>
+      </a>
+      <a class="coord" href="mailto:contact@generalautordc.com">
+        <span class="coord-txt"><small>E-mail</small><b>contact@generalautordc.com</b></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.6"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+      </a>
+      <div class="coord">
+        <span class="coord-txt"><small>Adresse</small><b>Kinshasa, Gombe — RDC</b></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="enveloppe pied">
+    <p>Général Auto RDC — Vente, location et entretien automobile · Kinshasa</p>
+    <a class="pied-yuu" href="https://wa.me/243977555768" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+      Inspire by YuuStore — +243 977 555 768
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
